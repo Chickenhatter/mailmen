@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dxp3nvr7ckh00"]
+
+[ext_resource type="Script" uid="uid://chv8x6jjk1lw4" path="res://code/charactermainmove.gd" id="1_1kc1q"]
+[ext_resource type="Texture2D" uid="uid://cyfvsrlvwtdo0" path="res://icon.svg" id="2_4msxo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fb3c"]
+size = Vector2(28, 28.5)
+
+[node name="Node2D" type="Node2D" unique_id=666886907]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=150342035]
+position = Vector2(0, -1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D" unique_id=1972218064]
+position = Vector2(70, 31)
+script = ExtResource("1_1kc1q")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterBody2D" unique_id=1524461955]
+position = Vector2(9, 15.500002)
+scale = Vector2(0.21875001, 0.22656251)
+texture = ExtResource("2_4msxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CharacterBody2D" unique_id=759103610]
+position = Vector2(9, 14.75)
+shape = SubResource("RectangleShape2D_5fb3c")
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/CharacterBody2D" unique_id=198284071]
+position = Vector2(20, 15)
+position_smoothing_enabled = true
+
+[node name="Icon" type="Sprite2D" parent="Node2D" unique_id=2088460176]
+position = Vector2(205, 57)
+texture = ExtResource("2_4msxo")
