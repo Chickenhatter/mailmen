@@ -2,6 +2,9 @@ extends Node2D
 var inbone = false
 var holdingbone = false
 var dogtamed = false
+@onready var darkplace = $"../../character/mailman/darkspire"
+@onready var character = $"../../character/mailman"
+var darkening = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,8 +23,15 @@ func _process(delta: float) -> void:
 			holdingbone = false
 			$bone/bonesprite.play('bone')
 			$"../../character/mailman/bonesprite".play('none')
-
-
+	
+	if darkening == true:
+		darkplace.self_modulate.a += delta * 1
+		if darkplace.self_modulate.a < 0:
+			darkplace.self_modulate.a = 0
+	else:
+		darkplace.self_modulate.a -= delta * 1
+		if darkplace.self_modulate.a > 1:
+			darkplace.self_modulate.a = 1
 
 
 func _on_bonearea_body_entered(body: Node2D) -> void:
@@ -35,16 +45,38 @@ func _on_bonearea_body_exited(body: Node2D) -> void:
 
 
 func _on_gardenarea_body_entered(body: Node2D) -> void:
-	if dogtamed == false:
-		if holdingbone == true:
-			dogtamed = true
-			tame_dog()
-		else:
-			dog_pushout()
+	if body.name == "mailman":
+		if dogtamed == false:
+			if holdingbone == true:
+				dogtamed = true
+				tame_dog()
+			else:
+				dog_pushout()
 
 
 func tame_dog():
-	$"../../character/mailman".moving = false
+	darkening = true
+	await get_tree().create_timer(0.2).timeout
+	character.moving = false
+	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.6).timeout
+	$"../../character/mailman/bonesprite".play('none')
+	await get_tree().create_timer(1).timeout
+	darkening = false
+	
+	dogtamed = true
+	await get_tree().create_timer(0.2).timeout
+	character.moving = true
 
 func dog_pushout():
-	$"../../character/mailman".moving = false
+	character.moving = false
+	await get_tree().create_timer(0.2).timeout
+	darkening = true
+	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.3).timeout
+	character.global_position = $"dog garden/Node2D/gardenarea/pointtomove".global_position
+	$dogbark.play()
+	await get_tree().create_timer(0.5).timeout
+	darkening = false
+	await get_tree().create_timer(1).timeout
+	character.moving = true

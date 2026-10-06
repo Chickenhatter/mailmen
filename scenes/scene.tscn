@@ -62,9 +62,15 @@ autoplay = "bone"
 [node name="Node2D" type="Node2D" parent="Node2D/games/dog and bone/dog garden" unique_id=1994078129]
 
 [node name="gardenarea" type="Area2D" parent="Node2D/games/dog and bone/dog garden/Node2D" unique_id=1238482018]
+position = Vector2(170, 19)
+
+[node name="pointtomove" type="Node2D" parent="Node2D/games/dog and bone/dog garden/Node2D/gardenarea" unique_id=797139593]
+position = Vector2(2, 31)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/dog and bone/dog garden/Node2D/gardenarea" unique_id=266934973]
 shape = SubResource("RectangleShape2D_rpb1b")
+
+[node name="dogbark" type="AudioStreamPlayer2D" parent="Node2D/games/dog and bone" unique_id=1122854645]
 
 [node name="character" type="Node2D" parent="Node2D" unique_id=275240134]
 
@@ -91,6 +97,12 @@ scale = Vector2(0.1, 0.21000001)
 sprite_frames = SubResource("SpriteFrames_7xrwy")
 animation = &"none"
 autoplay = "none"
+
+[node name="darkspire" type="Sprite2D" parent="Node2D/character/mailman" unique_id=448714224]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 0)
+position = Vector2(31.500008, 18.5)
+scale = Vector2(2.3203125, 1.3671875)
+texture = ExtResource("2_4msxo")
 
 [node name="Node2D" type="Node2D" parent="Node2D" unique_id=1221848106]
 
