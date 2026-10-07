@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://chv8x6jjk1lw4" path="res://code/charactermainmove.gd" id="1_1kc1q"]
 [ext_resource type="Texture2D" uid="uid://cyfvsrlvwtdo0" path="res://icon.svg" id="2_4msxo"]
 [ext_resource type="Script" uid="uid://cq45qp2gq3g47" path="res://code/dog_and_bone.gd" id="3_5fb3c"]
+[ext_resource type="Script" uid="uid://blxlhuyl3f4bp" path="res://code/generalmailbox.gd" id="3_dv0eb"]
 [ext_resource type="Script" uid="uid://b0gxmyyp6ee80" path="res://code/deadlock_mailbox.gd" id="3_gjmho"]
+[ext_resource type="AudioStream" uid="uid://70fssnce8v10" path="res://assets/sound/dog.mp3" id="3_tvkk6"]
 [ext_resource type="Texture2D" uid="uid://dweeym2wfu1jl" path="res://assets/items/round-modified.png" id="4_5yiy0"]
 [ext_resource type="Texture2D" uid="uid://c3xokofw0kmrg" path="res://assets/items/bone.png" id="4_gjmho"]
 [ext_resource type="Texture2D" uid="uid://dhwsycd8xcf5u" path="res://assets/tiles/sgrey.png" id="4_t7and"]
@@ -40,17 +42,20 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpb1b"]
 size = Vector2(171, 102)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5m13b"]
-size = Vector2(20, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xrwy"]
-size = Vector2(20, 27)
-
 [sub_resource type="Curve2D" id="Curve2D_dv0eb"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 219, 147, 140.21875, -158.07932, -140.21875, 158.07932, 41, 12, 0, 0, 0, 0, 37, 12, 0, 0, 0, 0, 35, 12)
 }
 point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrcul"]
+size = Vector2(20, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5m13b"]
+size = Vector2(20, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xrwy"]
+size = Vector2(20, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjmho"]
 size = Vector2(22, 37)
@@ -581,13 +586,97 @@ position = Vector2(-272, 173)
 position = Vector2(170, 19)
 
 [node name="pointtomove" type="Node2D" parent="Node2D/games/dog and bone/dog garden/Node2D/gardenarea" unique_id=797139593]
-position = Vector2(133, 21)
+position = Vector2(141, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/dog and bone/dog garden/Node2D/gardenarea" unique_id=266934973]
 position = Vector2(14.5, 7)
 shape = SubResource("RectangleShape2D_rpb1b")
 
 [node name="dogbark" type="AudioStreamPlayer2D" parent="Node2D/games/dog and bone" unique_id=1122854645]
+stream = ExtResource("3_tvkk6")
+volume_db = -15.0
+
+[node name="mailbox" type="Node2D" parent="Node2D/games/dog and bone" unique_id=1175185899]
+position = Vector2(-73, 153)
+script = ExtResource("3_dv0eb")
+
+[node name="mailboxsprite" type="Node2D" parent="Node2D/games/dog and bone/mailbox" unique_id=1178687093]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/dog and bone/mailbox/mailboxsprite" unique_id=1434108849]
+position = Vector2(10.000001, -7.0000076)
+scale = Vector2(0.012249969, 0.0112499995)
+texture = ExtResource("7_tpwpp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/games/dog and bone/mailbox/mailboxsprite" unique_id=396086194]
+position = Vector2(10.000004, -1)
+scale = Vector2(0.011500002, 0.011749999)
+texture = ExtResource("8_7ftgl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D/games/dog and bone/mailbox/mailboxsprite" unique_id=676911372]
+position = Vector2(10.000001, 6)
+scale = Vector2(0.011500002, 0.011749999)
+texture = ExtResource("8_7ftgl")
+
+[node name="mailbox screen" type="Node2D" parent="Node2D/games/dog and bone/mailbox" unique_id=477346966]
+z_index = 4096
+position = Vector2(-761, -633)
+
+[node name="imagry" type="Node2D" parent="Node2D/games/dog and bone/mailbox/mailbox screen" unique_id=1828544344]
+
+[node name="front" type="Node2D" parent="Node2D/games/dog and bone/mailbox/mailbox screen/imagry" unique_id=970803849]
+z_index = 10
+position = Vector2(17, 32)
+
+[node name="front" type="Sprite2D" parent="Node2D/games/dog and bone/mailbox/mailbox screen/imagry/front" unique_id=990196590]
+position = Vector2(1, -26.999998)
+scale = Vector2(0.069125, 0.079500005)
+texture = ExtResource("5_0f71q")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/dog and bone/mailbox/mailbox screen/imagry" unique_id=1909771950]
+position = Vector2(26, -2)
+scale = Vector2(0.06425002, 0.10375)
+texture = ExtResource("8_7ftgl")
+
+[node name="back" type="Sprite2D" parent="Node2D/games/dog and bone/mailbox/mailbox screen/imagry" unique_id=1494461963]
+position = Vector2(17, 4)
+scale = Vector2(0.070999995, 0.084)
+texture = ExtResource("4_5yiy0")
+
+[node name="Grass" type="Sprite2D" parent="Node2D/games/dog and bone/mailbox/mailbox screen" unique_id=917213238]
+z_index = -5
+position = Vector2(26.00001, 4.9999924)
+scale = Vector2(0.123, 0.067999996)
+texture = ExtResource("6_ruw3y")
+
+[node name="Path2D" type="Path2D" parent="Node2D/games/dog and bone/mailbox/mailbox screen" unique_id=915196399]
+z_index = -1
+position = Vector2(5, -11)
+curve = SubResource("Curve2D_dv0eb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/games/dog and bone/mailbox/mailbox screen/Path2D" unique_id=159075757]
+position = Vector2(219, 147)
+rotation = -1.6990006
+
+[node name="Node2D" type="Node2D" parent="Node2D/games/dog and bone/mailbox/mailbox screen/Path2D/PathFollow2D" unique_id=1364329809]
+rotation = 3.1415927
+scale = Vector2(0.24, 2)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/games/dog and bone/mailbox/mailbox screen/Path2D/PathFollow2D/Node2D" unique_id=1275182907]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(-2.0000143, -1.0000151)
+scale = Vector2(0.17216142, 0.10212754)
+texture = ExtResource("4_t7and")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/dog and bone/mailbox/mailbox screen/Path2D/PathFollow2D/Node2D" unique_id=1087182614]
+position = Vector2(14, 0)
+scale = Vector2(0.053874984, 0.048499968)
+texture = ExtResource("10_1id6j")
+
+[node name="generalmailarea" type="Area2D" parent="Node2D/games/dog and bone/mailbox" unique_id=63391500]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/dog and bone/mailbox/generalmailarea" unique_id=432604759]
+position = Vector2(8, 4)
+shape = SubResource("RectangleShape2D_nrcul")
 
 [node name="deadlock mailbox" type="Node2D" parent="Node2D/games" unique_id=1304377604]
 script = ExtResource("3_gjmho")
@@ -756,6 +845,11 @@ texture = ExtResource("9_dqloj")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/house" unique_id=1343786214]
 position = Vector2(143, -68)
+scale = Vector2(0.074999906, 0.065500006)
+texture = ExtResource("9_dqloj")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/house" unique_id=643491820]
+position = Vector2(-103, 114)
 scale = Vector2(0.074999906, 0.065500006)
 texture = ExtResource("9_dqloj")
 
@@ -958,12 +1052,99 @@ texture = ExtResource("10_5yiy0")
 [node name="tileset" type="Node2D" parent="Node2D/games/map" unique_id=1602572510]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Node2D/games/map/tileset" unique_id=717502953]
-tile_map_data = PackedByteArray("AAAFAPn/AAACAAoAAAAFAPr/AAACAAoAAAAFAPv/AAACAAoAAAAFAPz/AAACAAoAAAAFAP3/AAACAAoAAAAFAP7/AAACAAoAAAAGAP7/AAACAAoAAAAHAP7/AAACAAoAAAAIAP7/AAACAAoAAAAJAP7/AAACAAoAAAAKAP7/AAACAAoAAAALAP7/AAACAAoAAAAMAP7/AAACAAoAAAANAP7/AAACAAoAAAAOAP7/AAACAAoAAAAPAP7/AAACAAoAAAAQAP7/AAACAAoAAAARAP7/AAACAAoAAAASAP7/AAACAAoAAAATAP7/AAACAAoAAAATAP3/AAACAAoAAAATAPz/AAACAAoAAAATAPv/AAACAAoAAAATAPr/AAACAAoAAAATAPn/AAACAAoAAAATAPj/AAACAAoAAAATAPf/AAACAAoAAAATAPb/AAACAAoAAAATAPX/AAACAAoAAAATAPT/AAACAAoAAAATAPP/AAACAAoAAAATAPL/AAAJAAkAAAATAPH/AAACAAoAAAATAPD/AAACAAoAAAATAO//AAACAAoAAAASAO//AAACAAoAAAARAO//AAACAAoAAAAQAO//AAACAAoAAAAPAO//AAACAAoAAAAOAO//AAACAAoAAAANAO//AAACAAoAAAAMAO//AAACAAoAAAALAO//AAACAAoAAAAKAO//AAACAAoAAAAJAO//AAACAAoAAAAIAO//AAACAAoAAAAHAO//AAACAAoAAAAGAO//AAACAAoAAAAFAO//AAACAAoAAAAEAO//AAACAAoAAAAEAPD/AAAJAAkAAAAEAPH/AAACAAoAAAAEAPL/AAACAAoAAAAEAPP/AAACAAoAAAAEAPT/AAACAAoAAAAEAPX/AAACAAoAAAAEAPb/AAACAAoAAAAEAPf/AAACAAoAAAAEAPj/AAACAAoAAAD1//r/AAACAAoAAAD1//n/AAACAAoAAAD1//j/AAACAAoAAAD1//f/AAACAAoAAAD1//b/AAACAAoAAAD1//X/AAACAAoAAAD1//T/AAACAAoAAAD1//P/AAACAAoAAAD1//L/AAACAAoAAAD1//H/AAACAAoAAAD1//D/AAAJAAkAAAD1/+//AAACAAoAAAD1/+7/AAACAAoAAAD0/+7/AAACAAoAAADz/+7/AAACAAoAAADy/+7/AAACAAoA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")
+tile_map_data = PackedByteArray("AAAFAPn/AAACAAoAAAAFAPr/AAACAAoAAAAFAPv/AAACAAoAAAAFAPz/AAACAAoAAAAFAP3/AAACAAoAAAAFAP7/AAACAAoAAAAGAP7/AAACAAoAAAAHAP7/AAACAAoAAAAIAP7/AAACAAoAAAAJAP7/AAACAAoAAAAKAP7/AAACAAoAAAALAP7/AAACAAoAAAAMAP7/AAACAAoAAAANAP7/AAACAAoAAAAOAP7/AAACAAoAAAAPAP7/AAACAAoAAAAQAP7/AAACAAoAAAARAP7/AAACAAoAAAASAP7/AAACAAoAAAATAP7/AAACAAoAAAATAP3/AAACAAoAAAATAPz/AAACAAoAAAATAPv/AAACAAoAAAATAPr/AAACAAoAAAATAPn/AAACAAoAAAATAPj/AAACAAoAAAATAPf/AAACAAoAAAATAPb/AAACAAoAAAATAPX/AAACAAoAAAATAPT/AAACAAoAAAATAPP/AAACAAoAAAATAPL/AAAJAAkAAAATAPH/AAACAAoAAAATAPD/AAACAAoAAAATAO//AAACAAoAAAASAO//AAACAAoAAAARAO//AAACAAoAAAAQAO//AAACAAoAAAAPAO//AAACAAoAAAAOAO//AAACAAoAAAANAO//AAACAAoAAAAMAO//AAACAAoAAAALAO//AAACAAoAAAAKAO//AAACAAoAAAAJAO//AAACAAoAAAAIAO//AAACAAoAAAAHAO//AAACAAoAAAAGAO//AAACAAoAAAAFAO//AAACAAoAAAAEAO//AAACAAoAAAAEAPD/AAAJAAkAAAAEAPH/AAACAAoAAAAEAPL/AAACAAoAAAAEAPP/AAACAAoAAAAEAPT/AAACAAoAAAAEAPX/AAACAAoAAAAEAPb/AAACAAoAAAAEAPf/AAACAAoAAAAEAPj/AAACAAoAAAD1//r/AAACAAoAAAD1//n/AAACAAoAAAD1//j/AAACAAoAAAD1//f/AAACAAoAAAD1//b/AAACAAoAAAD1//X/AAACAAoAAAD1//T/AAACAAoAAAD1//P/AAACAAoAAAD1//L/AAACAAoAAAD1//H/AAACAAoAAAD1//D/AAAJAAkAAAD1/+//AAACAAoAAAD1/+7/AAACAAoAAAD0/+7/AAACAAoAAADz/+7/AAACAAoAAADy/+7/AAACAAoA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")
 tile_set = SubResource("TileSet_1id6j")
+
+[node name="garden from another" type="Node2D" parent="Node2D/games" unique_id=1178260211]
+
+[node name="mailbox" type="Node2D" parent="Node2D/games/garden from another" unique_id=2060326296]
+position = Vector2(287, -18)
+script = ExtResource("3_dv0eb")
+
+[node name="mailboxsprite" type="Node2D" parent="Node2D/games/garden from another/mailbox" unique_id=2003326767]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/garden from another/mailbox/mailboxsprite" unique_id=1636682939]
+position = Vector2(10.000001, -7.0000076)
+scale = Vector2(0.012249969, 0.0112499995)
+texture = ExtResource("7_tpwpp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/games/garden from another/mailbox/mailboxsprite" unique_id=879858218]
+position = Vector2(10.000004, -1)
+scale = Vector2(0.011500002, 0.011749999)
+texture = ExtResource("8_7ftgl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D/games/garden from another/mailbox/mailboxsprite" unique_id=965032139]
+position = Vector2(10.000001, 6)
+scale = Vector2(0.011500002, 0.011749999)
+texture = ExtResource("8_7ftgl")
+
+[node name="mailbox screen" type="Node2D" parent="Node2D/games/garden from another/mailbox" unique_id=1326913905]
+z_index = 4096
+position = Vector2(-761, -633)
+
+[node name="imagry" type="Node2D" parent="Node2D/games/garden from another/mailbox/mailbox screen" unique_id=322580142]
+
+[node name="front" type="Node2D" parent="Node2D/games/garden from another/mailbox/mailbox screen/imagry" unique_id=1503987449]
+z_index = 10
+position = Vector2(17, 32)
+
+[node name="front" type="Sprite2D" parent="Node2D/games/garden from another/mailbox/mailbox screen/imagry/front" unique_id=1864431348]
+position = Vector2(1, -26.999998)
+scale = Vector2(0.069125, 0.079500005)
+texture = ExtResource("5_0f71q")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/garden from another/mailbox/mailbox screen/imagry" unique_id=1103047290]
+position = Vector2(26, -2)
+scale = Vector2(0.06425002, 0.10375)
+texture = ExtResource("8_7ftgl")
+
+[node name="back" type="Sprite2D" parent="Node2D/games/garden from another/mailbox/mailbox screen/imagry" unique_id=1078446604]
+position = Vector2(17, 4)
+scale = Vector2(0.070999995, 0.084)
+texture = ExtResource("4_5yiy0")
+
+[node name="Grass" type="Sprite2D" parent="Node2D/games/garden from another/mailbox/mailbox screen" unique_id=1914472746]
+z_index = -5
+position = Vector2(26.00001, 4.9999924)
+scale = Vector2(0.123, 0.067999996)
+texture = ExtResource("6_ruw3y")
+
+[node name="Path2D" type="Path2D" parent="Node2D/games/garden from another/mailbox/mailbox screen" unique_id=1417996749]
+z_index = -1
+position = Vector2(5, -11)
+curve = SubResource("Curve2D_dv0eb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/games/garden from another/mailbox/mailbox screen/Path2D" unique_id=346861153]
+position = Vector2(219, 147)
+rotation = -1.6990006
+
+[node name="Node2D" type="Node2D" parent="Node2D/games/garden from another/mailbox/mailbox screen/Path2D/PathFollow2D" unique_id=34988039]
+rotation = 3.1415927
+scale = Vector2(0.24, 2)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/games/garden from another/mailbox/mailbox screen/Path2D/PathFollow2D/Node2D" unique_id=1321197788]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(-2.0000143, -1.0000151)
+scale = Vector2(0.17216142, 0.10212754)
+texture = ExtResource("4_t7and")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/garden from another/mailbox/mailbox screen/Path2D/PathFollow2D/Node2D" unique_id=1288052076]
+position = Vector2(14, 0)
+scale = Vector2(0.053874984, 0.048499968)
+texture = ExtResource("10_1id6j")
+
+[node name="generalmailarea" type="Area2D" parent="Node2D/games/garden from another/mailbox" unique_id=725637441]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/garden from another/mailbox/generalmailarea" unique_id=1918308528]
+position = Vector2(8, 4)
+shape = SubResource("RectangleShape2D_nrcul")
+
+[node name="keyed" type="Node2D" parent="Node2D/games" unique_id=1505840091]
 
 [node name="character" type="Node2D" parent="Node2D" unique_id=275240134]
 
 [node name="mailman" type="CharacterBody2D" parent="Node2D/character" unique_id=1972218064]
+unique_name_in_owner = true
 position = Vector2(70, 31)
 script = ExtResource("1_1kc1q")
 
@@ -1000,6 +1181,8 @@ position_smoothing_enabled = true
 [connection signal="body_exited" from="Node2D/games/dog and bone/bone/bonearea" to="Node2D/games/dog and bone" method="_on_bone_body_exited"]
 [connection signal="body_exited" from="Node2D/games/dog and bone/bone/bonearea" to="Node2D/games/dog and bone" method="_on_bonearea_body_exited"]
 [connection signal="body_entered" from="Node2D/games/dog and bone/dog garden/Node2D/gardenarea" to="Node2D/games/dog and bone" method="_on_gardenarea_body_entered"]
+[connection signal="body_entered" from="Node2D/games/dog and bone/mailbox/generalmailarea" to="Node2D/games/dog and bone/mailbox" method="_on_generalmailarea_body_entered"]
+[connection signal="body_exited" from="Node2D/games/dog and bone/mailbox/generalmailarea" to="Node2D/games/dog and bone/mailbox" method="_on_generalmailarea_body_exited"]
 [connection signal="area_entered" from="Node2D/games/deadlock mailbox/mailbox screen/deadlock/dlactivator" to="Node2D/games/deadlock mailbox" method="_on_dlactivator_area_entered"]
 [connection signal="area_exited" from="Node2D/games/deadlock mailbox/mailbox screen/deadlock/dlactivator" to="Node2D/games/deadlock mailbox" method="_on_dlactivator_area_exited"]
 [connection signal="body_entered" from="Node2D/games/deadlock mailbox/mailbox screen/deadlock/dlactivator" to="Node2D/games/deadlock mailbox" method="_on_dlactivator_body_entered"]
@@ -1008,3 +1191,5 @@ position_smoothing_enabled = true
 [connection signal="mouse_exited" from="Node2D/games/deadlock mailbox/mailbox screen/deadlock/slider" to="Node2D/games/deadlock mailbox" method="_on_slider_mouse_exited"]
 [connection signal="body_entered" from="Node2D/games/deadlock mailbox/mailbox/dlmailboxarea" to="Node2D/games/deadlock mailbox" method="_on_dlmailboxarea_body_entered"]
 [connection signal="body_exited" from="Node2D/games/deadlock mailbox/mailbox/dlmailboxarea" to="Node2D/games/deadlock mailbox" method="_on_dlmailboxarea_body_exited"]
+[connection signal="body_entered" from="Node2D/games/garden from another/mailbox/generalmailarea" to="Node2D/games/garden from another/mailbox" method="_on_generalmailarea_body_entered"]
+[connection signal="body_exited" from="Node2D/games/garden from another/mailbox/generalmailarea" to="Node2D/games/garden from another/mailbox" method="_on_generalmailarea_body_exited"]
