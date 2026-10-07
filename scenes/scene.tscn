@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://djfvvmdqno88o" path="res://assets/items/box.png" id="7_tpwpp"]
 [ext_resource type="Texture2D" uid="uid://dcq3ygg23rkvi" path="res://assets/items/stick-modified.png" id="8_7ftgl"]
 [ext_resource type="Texture2D" uid="uid://cen2koxcwgn8q" path="res://assets/map/house-modified.png" id="9_dqloj"]
+[ext_resource type="Texture2D" uid="uid://ds04tymx1scka" path="res://assets/items/mail-modified.png" id="10_1id6j"]
 [ext_resource type="Texture2D" uid="uid://cgr0lvlbhpgua" path="res://assets/map/fence-modified.png" id="10_5yiy0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4msxo"]
@@ -37,12 +38,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpb1b"]
+size = Vector2(171, 102)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5m13b"]
 size = Vector2(20, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xrwy"]
 size = Vector2(20, 27)
+
+[sub_resource type="Curve2D" id="Curve2D_dv0eb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 219, 147, 140.21875, -158.07932, -140.21875, 158.07932, 41, 12, 0, 0, 0, 0, 37, 12, 0, 0, 0, 0, 35, 12)
+}
+point_count = 4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjmho"]
 size = Vector2(22, 37)
@@ -79,6 +87,7 @@ texture_region_size = Vector2i(4, 4)
 13:0/0 = 0
 13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 14:0/0 = 0
+14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 15:0/0 = 0
 15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 16:0/0 = 0
@@ -180,6 +189,7 @@ texture_region_size = Vector2i(4, 4)
 13:3/0 = 0
 13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 14:3/0 = 0
+14:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 15:3/0 = 0
 15:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 16:3/0 = 0
@@ -221,6 +231,7 @@ texture_region_size = Vector2i(4, 4)
 0:5/0 = 0
 0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 2:5/0 = 0
 2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 3:5/0 = 0
@@ -246,6 +257,7 @@ texture_region_size = Vector2i(4, 4)
 13:5/0 = 0
 13:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 14:5/0 = 0
+14:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 15:5/0 = 0
 15:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 16:5/0 = 0
@@ -293,6 +305,7 @@ texture_region_size = Vector2i(4, 4)
 3:7/0 = 0
 3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 5:7/0 = 0
 5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 6:7/0 = 0
@@ -306,12 +319,15 @@ texture_region_size = Vector2i(4, 4)
 10:7/0 = 0
 10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 11:7/0 = 0
+11:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 12:7/0 = 0
+12:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 13:7/0 = 0
 13:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 14:7/0 = 0
 14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 15:7/0 = 0
+15:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 16:7/0 = 0
 16:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 0:8/0 = 0
@@ -341,6 +357,7 @@ texture_region_size = Vector2i(4, 4)
 12:8/0 = 0
 12:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 13:8/0 = 0
+13:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 14:8/0 = 0
 14:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
 15:8/0 = 0
@@ -539,15 +556,17 @@ position = Vector2(0, -1)
 script = ExtResource("3_5fb3c")
 
 [node name="bone" type="Node2D" parent="Node2D/games/dog and bone" unique_id=1312047553]
-position = Vector2(145, 36)
+position = Vector2(79, 46)
 
 [node name="bonearea" type="Area2D" parent="Node2D/games/dog and bone/bone" unique_id=1088051216]
+position = Vector2(-67, 11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/dog and bone/bone/bonearea" unique_id=939405234]
+position = Vector2(85, -7)
 shape = SubResource("CircleShape2D_4msxo")
 
 [node name="bonesprite" type="AnimatedSprite2D" parent="Node2D/games/dog and bone/bone" unique_id=1714381196]
-position = Vector2(0, -1)
+position = Vector2(18, 3)
 scale = Vector2(0.1, 0.21000001)
 sprite_frames = SubResource("SpriteFrames_7xrwy")
 animation = &"bone"
@@ -556,14 +575,16 @@ autoplay = "bone"
 [node name="dog garden" type="Node2D" parent="Node2D/games/dog and bone" unique_id=944260501]
 
 [node name="Node2D" type="Node2D" parent="Node2D/games/dog and bone/dog garden" unique_id=1994078129]
+position = Vector2(-272, 173)
 
 [node name="gardenarea" type="Area2D" parent="Node2D/games/dog and bone/dog garden/Node2D" unique_id=1238482018]
 position = Vector2(170, 19)
 
 [node name="pointtomove" type="Node2D" parent="Node2D/games/dog and bone/dog garden/Node2D/gardenarea" unique_id=797139593]
-position = Vector2(2, 31)
+position = Vector2(133, 21)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/dog and bone/dog garden/Node2D/gardenarea" unique_id=266934973]
+position = Vector2(14.5, 7)
 shape = SubResource("RectangleShape2D_rpb1b")
 
 [node name="dogbark" type="AudioStreamPlayer2D" parent="Node2D/games/dog and bone" unique_id=1122854645]
@@ -572,11 +593,13 @@ shape = SubResource("RectangleShape2D_rpb1b")
 script = ExtResource("3_gjmho")
 
 [node name="mailbox screen" type="Node2D" parent="Node2D/games/deadlock mailbox" unique_id=1937148100]
-position = Vector2(79, 46)
+z_index = 4096
+position = Vector2(-775, -646)
 
 [node name="imagry" type="Node2D" parent="Node2D/games/deadlock mailbox/mailbox screen" unique_id=10716079]
 
 [node name="front" type="Node2D" parent="Node2D/games/deadlock mailbox/mailbox screen/imagry" unique_id=906069612]
+z_index = 10
 position = Vector2(17, 32)
 
 [node name="front" type="Sprite2D" parent="Node2D/games/deadlock mailbox/mailbox screen/imagry/front" unique_id=672639389]
@@ -627,6 +650,36 @@ texture = ExtResource("2_4msxo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/deadlock mailbox/mailbox screen/deadlock/slider" unique_id=475272820]
 shape = SubResource("RectangleShape2D_7xrwy")
 
+[node name="Grass" type="Sprite2D" parent="Node2D/games/deadlock mailbox/mailbox screen" unique_id=618289992]
+z_index = -5
+position = Vector2(26.00001, 4.9999924)
+scale = Vector2(0.123, 0.067999996)
+texture = ExtResource("6_ruw3y")
+
+[node name="Path2D" type="Path2D" parent="Node2D/games/deadlock mailbox/mailbox screen" unique_id=1249396891]
+z_index = -1
+position = Vector2(5, -11)
+curve = SubResource("Curve2D_dv0eb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/games/deadlock mailbox/mailbox screen/Path2D" unique_id=1096829387]
+position = Vector2(219, 147)
+rotation = -1.6990006
+
+[node name="Node2D" type="Node2D" parent="Node2D/games/deadlock mailbox/mailbox screen/Path2D/PathFollow2D" unique_id=1542838783]
+rotation = 3.1415927
+scale = Vector2(0.24, 2)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/games/deadlock mailbox/mailbox screen/Path2D/PathFollow2D/Node2D" unique_id=899367777]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(-2.0000143, -1.0000151)
+scale = Vector2(0.17216142, 0.10212754)
+texture = ExtResource("4_t7and")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/deadlock mailbox/mailbox screen/Path2D/PathFollow2D/Node2D" unique_id=1440748876]
+position = Vector2(14, 0)
+scale = Vector2(0.053874984, 0.048499968)
+texture = ExtResource("10_1id6j")
+
 [node name="mailbox" type="Node2D" parent="Node2D/games/deadlock mailbox" unique_id=1503831462]
 
 [node name="dlmailboxarea" type="Area2D" parent="Node2D/games/deadlock mailbox/mailbox" unique_id=1983689588]
@@ -635,10 +688,28 @@ shape = SubResource("RectangleShape2D_7xrwy")
 position = Vector2(9, -0.5)
 shape = SubResource("RectangleShape2D_gjmho")
 
+[node name="dlmmap" type="Node2D" parent="Node2D/games/deadlock mailbox/mailbox" unique_id=298140052]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/deadlock mailbox/mailbox/dlmmap" unique_id=530197494]
+position = Vector2(10.000001, -7.0000076)
+scale = Vector2(0.012249969, 0.0112499995)
+texture = ExtResource("7_tpwpp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/games/deadlock mailbox/mailbox/dlmmap" unique_id=1673857896]
+position = Vector2(10.000004, -1)
+scale = Vector2(0.011500002, 0.011749999)
+texture = ExtResource("8_7ftgl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D/games/deadlock mailbox/mailbox/dlmmap" unique_id=750751820]
+position = Vector2(10.000001, 6)
+scale = Vector2(0.011500002, 0.011749999)
+texture = ExtResource("8_7ftgl")
+
 [node name="map" type="Node2D" parent="Node2D/games" unique_id=1969581858]
 z_index = -99
 
 [node name="grass" type="Node2D" parent="Node2D/games/map" unique_id=113049502]
+z_index = -3
 scale = Vector2(0.175, 0.175)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/games/map/grass" unique_id=3892371]
@@ -673,49 +744,8 @@ texture = ExtResource("6_ruw3y")
 
 [node name="houses" type="Node2D" parent="Node2D/games/map" unique_id=1740772797]
 
-[node name="dlmmap" type="Node2D" parent="Node2D/games/map/houses" unique_id=298140052]
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/map/houses/dlmmap" unique_id=530197494]
-position = Vector2(10.000001, -7.0000076)
-scale = Vector2(0.012249969, 0.0112499995)
-texture = ExtResource("7_tpwpp")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Node2D/games/map/houses/dlmmap" unique_id=1673857896]
-position = Vector2(10.000004, -1)
-scale = Vector2(0.011500002, 0.011749999)
-texture = ExtResource("8_7ftgl")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Node2D/games/map/houses/dlmmap" unique_id=750751820]
-position = Vector2(10.000001, 6)
-scale = Vector2(0.011500002, 0.011749999)
-texture = ExtResource("8_7ftgl")
-
 [node name="Node2D" type="Node2D" parent="Node2D/games/map/houses" unique_id=531689654]
 z_index = 3
-
-[node name="Sprite2D4" type="Sprite2D" parent="Node2D/games/map/houses/Node2D" unique_id=235157111]
-z_index = -1
-position = Vector2(-58.000008, -76.99999)
-scale = Vector2(0.053, 0.0915)
-texture = ExtResource("10_5yiy0")
-
-[node name="Sprite2D5" type="Sprite2D" parent="Node2D/games/map/houses/Node2D" unique_id=926439189]
-z_index = -1
-position = Vector2(41.999992, -74)
-scale = Vector2(0.053, 0.0915)
-texture = ExtResource("10_5yiy0")
-
-[node name="Sprite2D6" type="Sprite2D" parent="Node2D/games/map/houses/Node2D" unique_id=2131193517]
-z_index = -1
-position = Vector2(-72, -26.000008)
-scale = Vector2(0.053, 0.0915)
-texture = ExtResource("10_5yiy0")
-
-[node name="Sprite2D7" type="Sprite2D" parent="Node2D/games/map/houses/Node2D" unique_id=1122436834]
-z_index = -1
-position = Vector2(44.999992, -24.000008)
-scale = Vector2(0.053, 0.0915)
-texture = ExtResource("10_5yiy0")
 
 [node name="house" type="Node2D" parent="Node2D/games/map/houses/Node2D" unique_id=289106201]
 
@@ -729,17 +759,206 @@ position = Vector2(143, -68)
 scale = Vector2(0.074999906, 0.065500006)
 texture = ExtResource("9_dqloj")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/house" unique_id=309444183]
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D/games/map/houses/Node2D" unique_id=309444183]
 position = Vector2(291, -70)
 scale = Vector2(0.074999906, 0.065500006)
 texture = ExtResource("9_dqloj")
 
 [node name="fence" type="Node2D" parent="Node2D/games/map/houses/Node2D" unique_id=274435323]
+z_index = -1
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=235157111]
+z_index = -1
+position = Vector2(-58.000008, -76.99999)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=926439189]
+z_index = -3
+position = Vector2(41.999992, -74)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=2131193517]
+z_index = -1
+position = Vector2(-72, -26.000008)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1122436834]
+z_index = -1
+position = Vector2(44.999992, -24.000008)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=136257470]
+z_index = -1
+position = Vector2(106.99998, -74)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1772393190]
+z_index = -1
+position = Vector2(178.99997, -75)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=2055621215]
+z_index = -1
+position = Vector2(244.99997, -74)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1431827443]
+z_index = -1
+position = Vector2(200, 33.999985)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1419350908]
+z_index = -2
+position = Vector2(60.000015, -12.000008)
+rotation = -1.7104226
+scale = Vector2(0.053, 0.0915)
+skew = -1.1641346
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1644448342]
+z_index = -2
+position = Vector2(170.99998, 53)
+rotation = -1.7104226
+scale = Vector2(0.053, 0.0915)
+skew = -1.1641346
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=150616111]
+z_index = -1
+position = Vector2(263.99997, 34.999992)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=2055558366]
+z_index = -1
+position = Vector2(313, -38.000008)
+rotation = 1.3404129
+scale = Vector2(0.053, 0.0915)
+skew = -1.282817
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1712840202]
+z_index = -1
+position = Vector2(326, 18.999992)
+rotation = 1.3404129
+scale = Vector2(0.053, 0.0915)
+skew = -1.282817
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D17" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1645388346]
+z_index = -1
+position = Vector2(290.00003, 37)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D18" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=2115369832]
+z_index = -3
+position = Vector2(348.99997, -7.0000076)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D19" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=644373947]
+z_index = -3
+position = Vector2(415.99997, -6.0000076)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D20" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1530110310]
+z_index = -3
+position = Vector2(333, -75)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D21" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1638225282]
+z_index = -3
+position = Vector2(399.99997, -74)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D22" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=807930627]
+z_index = -3
+position = Vector2(468.00003, -74)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D23" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1172631182]
+z_index = -3
+position = Vector2(-85.99999, 108.999985)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D24" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1038528270]
+z_index = -3
+position = Vector2(-21.000015, 109)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D25" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1654117569]
+z_index = -3
+position = Vector2(-179, 105.999985)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D26" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1691888890]
+z_index = -3
+position = Vector2(-245, 105.00001)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D27" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=754873330]
+z_index = -3
+position = Vector2(7, 169)
+rotation = 4.660029
+scale = Vector2(0.053, 0.0915)
+skew = -1.2740904
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D28" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=875226367]
+z_index = -3
+position = Vector2(-181.99998, 179.99995)
+rotation = 4.660029
+scale = Vector2(0.053, 0.0915)
+skew = -1.2740904
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D29" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1506951479]
+z_index = -3
+position = Vector2(-176.99998, 238.99995)
+rotation = 4.660029
+scale = Vector2(0.053, 0.0915)
+skew = -1.2740904
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D30" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=536701308]
+z_index = -3
+position = Vector2(-142, 231)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D31" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=1805044321]
+z_index = -3
+position = Vector2(-76.00001, 231)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D32" type="Sprite2D" parent="Node2D/games/map/houses/Node2D/fence" unique_id=433699620]
+z_index = -3
+position = Vector2(-8.000015, 232)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
 
 [node name="tileset" type="Node2D" parent="Node2D/games/map" unique_id=1602572510]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Node2D/games/map/tileset" unique_id=717502953]
-tile_map_data = PackedByteArray("AAAFAPn/AAACAAoAAAAFAPr/AAACAAoAAAAFAPv/AAACAAoAAAAFAPz/AAACAAoAAAAFAP3/AAACAAoAAAAFAP7/AAACAAoAAAAGAP7/AAACAAoAAAAHAP7/AAACAAoAAAAIAP7/AAACAAoAAAAJAP7/AAACAAoAAAAKAP7/AAACAAoAAAALAP7/AAACAAoAAAAMAP7/AAACAAoAAAANAP7/AAACAAoAAAAOAP7/AAACAAoAAAAPAP7/AAACAAoAAAAQAP7/AAACAAoAAAARAP7/AAACAAoAAAASAP7/AAACAAoAAAATAP7/AAACAAoAAAATAP3/AAACAAoAAAATAPz/AAACAAoAAAATAPv/AAACAAoAAAATAPr/AAACAAoAAAATAPn/AAACAAoAAAATAPj/AAACAAoAAAATAPf/AAACAAoAAAATAPb/AAACAAoAAAATAPX/AAACAAoAAAATAPT/AAACAAoAAAATAPP/AAACAAoAAAATAPL/AAACAAoAAAATAPH/AAACAAoAAAATAPD/AAACAAoAAAATAO//AAACAAoAAAASAO//AAACAAoAAAARAO//AAACAAoAAAAQAO//AAACAAoAAAAPAO//AAACAAoAAAAOAO//AAACAAoAAAANAO//AAACAAoAAAAMAO//AAACAAoAAAALAO//AAACAAoAAAAKAO//AAACAAoAAAAJAO//AAACAAoAAAAIAO//AAACAAoAAAAHAO//AAACAAoAAAAGAO//AAACAAoAAAAFAO//AAACAAoAAAAEAO//AAACAAoAAAAEAPD/AAACAAoAAAAEAPH/AAACAAoAAAAEAPL/AAACAAoAAAAEAPP/AAACAAoAAAAEAPT/AAACAAoAAAAEAPX/AAACAAoAAAAEAPb/AAACAAoAAAAEAPf/AAACAAoAAAAEAPj/AAACAAoAAAD1//r/AAACAAoAAAD1//n/AAACAAoAAAD1//j/AAACAAoAAAD1//f/AAACAAoAAAD1//b/AAACAAoAAAD1//X/AAACAAoAAAD1//T/AAACAAoAAAD1//P/AAACAAoAAAD1//L/AAACAAoAAAD1//H/AAACAAoAAAD1//D/AAACAAoAAAD1/+//AAACAAoAAAD1/+7/AAACAAoAAAD0/+7/AAACAAoAAADz/+7/AAACAAoAAADy/+7/AAACAAoAAADx/+7/AAACAAoAAADw/+7/AAACAAoAAADv/+7/AAACAAoAAADu/+7/AAACAAoAAADt/+7/AAACAAoAAADs/+7/AAACAAoAAADr/+7/AAACAAoAAADq/+7/AAACAAoAAADq/+//AAACAAoAAADq//D/AAACAAoAAADq//H/AAACAAoAAADq//L/AAACAAoAAADq//P/AAACAAoAAADq//T/AAACAAoAAADq//X/AAACAAoAAADq//b/AAACAAoAAADq//f/AAACAAoAAADq//j/AAACAAoAAADq//n/AAACAAoAAADq//r/AAACAAoAAADq//v/AAACAAoAAADq//z/AAACAAoAAADq//3/AAACAAoAAADr//3/AAACAAoAAADs//3/AAACAAoAAADt//3/AAACAAoAAADu//3/AAACAAoAAADv//3/AAACAAoAAADw//3/AAACAAoAAADx//3/AAACAAoAAADy//3/AAACAAoAAADz//3/AAACAAoAAAD0//3/AAACAAoAAAD1//3/AAACAAoAAAD1//z/AAACAAoAAAD1//v/AAACAAoAAAA=")
+tile_map_data = PackedByteArray("AAAFAPn/AAACAAoAAAAFAPr/AAACAAoAAAAFAPv/AAACAAoAAAAFAPz/AAACAAoAAAAFAP3/AAACAAoAAAAFAP7/AAACAAoAAAAGAP7/AAACAAoAAAAHAP7/AAACAAoAAAAIAP7/AAACAAoAAAAJAP7/AAACAAoAAAAKAP7/AAACAAoAAAALAP7/AAACAAoAAAAMAP7/AAACAAoAAAANAP7/AAACAAoAAAAOAP7/AAACAAoAAAAPAP7/AAACAAoAAAAQAP7/AAACAAoAAAARAP7/AAACAAoAAAASAP7/AAACAAoAAAATAP7/AAACAAoAAAATAP3/AAACAAoAAAATAPz/AAACAAoAAAATAPv/AAACAAoAAAATAPr/AAACAAoAAAATAPn/AAACAAoAAAATAPj/AAACAAoAAAATAPf/AAACAAoAAAATAPb/AAACAAoAAAATAPX/AAACAAoAAAATAPT/AAACAAoAAAATAPP/AAACAAoAAAATAPL/AAAJAAkAAAATAPH/AAACAAoAAAATAPD/AAACAAoAAAATAO//AAACAAoAAAASAO//AAACAAoAAAARAO//AAACAAoAAAAQAO//AAACAAoAAAAPAO//AAACAAoAAAAOAO//AAACAAoAAAANAO//AAACAAoAAAAMAO//AAACAAoAAAALAO//AAACAAoAAAAKAO//AAACAAoAAAAJAO//AAACAAoAAAAIAO//AAACAAoAAAAHAO//AAACAAoAAAAGAO//AAACAAoAAAAFAO//AAACAAoAAAAEAO//AAACAAoAAAAEAPD/AAAJAAkAAAAEAPH/AAACAAoAAAAEAPL/AAACAAoAAAAEAPP/AAACAAoAAAAEAPT/AAACAAoAAAAEAPX/AAACAAoAAAAEAPb/AAACAAoAAAAEAPf/AAACAAoAAAAEAPj/AAACAAoAAAD1//r/AAACAAoAAAD1//n/AAACAAoAAAD1//j/AAACAAoAAAD1//f/AAACAAoAAAD1//b/AAACAAoAAAD1//X/AAACAAoAAAD1//T/AAACAAoAAAD1//P/AAACAAoAAAD1//L/AAACAAoAAAD1//H/AAACAAoAAAD1//D/AAAJAAkAAAD1/+//AAACAAoAAAD1/+7/AAACAAoAAAD0/+7/AAACAAoAAADz/+7/AAACAAoAAADy/+7/AAACAAoA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")
 tile_set = SubResource("TileSet_1id6j")
 
 [node name="character" type="Node2D" parent="Node2D" unique_id=275240134]

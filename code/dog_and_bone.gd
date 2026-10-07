@@ -20,9 +20,11 @@ func _process(delta: float) -> void:
 			holdingbone = true
 	elif holdingbone == true:
 		if Input.is_action_just_pressed('ui_f'):
-			holdingbone = false
-			$bone/bonesprite.play('bone')
-			$"../../character/mailman/bonesprite".play('none')
+			if character.moving == true:
+				holdingbone = false
+				$bone/bonesprite.play('bone')
+				$"../../character/mailman/bonesprite".play('none')
+				$bone.global_position = character.global_position
 	
 	if darkening == true:
 		darkplace.self_modulate.a += delta * 1
