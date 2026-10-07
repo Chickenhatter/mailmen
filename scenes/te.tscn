@@ -9,6 +9,7 @@ offset_left = -67.0
 offset_top = -42.0
 offset_right = 253.0
 offset_bottom = 138.0
+stretch_shrink = 4
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=193263928]
 handle_input_locally = false
