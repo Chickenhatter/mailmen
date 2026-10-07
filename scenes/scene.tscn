@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://cen2koxcwgn8q" path="res://assets/map/house-modified.png" id="9_dqloj"]
 [ext_resource type="Texture2D" uid="uid://ds04tymx1scka" path="res://assets/items/mail-modified.png" id="10_1id6j"]
 [ext_resource type="Texture2D" uid="uid://cgr0lvlbhpgua" path="res://assets/map/fence-modified.png" id="10_5yiy0"]
+[ext_resource type="Script" uid="uid://dh3x44rvs6fxa" path="res://code/keyed.gd" id="16_8cc7s"]
+[ext_resource type="Script" uid="uid://doyp6a8qtuokm" path="res://code/keymailbox.gd" id="17_r2e7w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4msxo"]
 radius = 15.0
@@ -547,6 +549,24 @@ tile_size = Vector2i(4, 4)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0f71q")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7xrwy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rpb1b"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"key",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"none",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fb3c"]
 size = Vector2(28, 28.5)
 
@@ -561,7 +581,7 @@ position = Vector2(0, -1)
 script = ExtResource("3_5fb3c")
 
 [node name="bone" type="Node2D" parent="Node2D/games/dog and bone" unique_id=1312047553]
-position = Vector2(79, 46)
+position = Vector2(317, -26)
 
 [node name="bonearea" type="Area2D" parent="Node2D/games/dog and bone/bone" unique_id=1088051216]
 position = Vector2(-67, 11)
@@ -1140,6 +1160,100 @@ position = Vector2(8, 4)
 shape = SubResource("RectangleShape2D_nrcul")
 
 [node name="keyed" type="Node2D" parent="Node2D/games" unique_id=1505840091]
+script = ExtResource("16_8cc7s")
+
+[node name="key" type="Node2D" parent="Node2D/games/keyed" unique_id=1756739541]
+
+[node name="keyarea" type="Area2D" parent="Node2D/games/keyed/key" unique_id=653301794]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/keyed/key/keyarea" unique_id=1385457465]
+shape = SubResource("CircleShape2D_7xrwy")
+
+[node name="key" type="AnimatedSprite2D" parent="Node2D/games/keyed/key" unique_id=2060051092]
+sprite_frames = SubResource("SpriteFrames_rpb1b")
+animation = &"none"
+
+[node name="mailbox" type="Node2D" parent="Node2D/games/keyed" unique_id=1865536360]
+position = Vector2(-73, 153)
+script = ExtResource("17_r2e7w")
+
+[node name="mailboxsprite" type="Node2D" parent="Node2D/games/keyed/mailbox" unique_id=655191929]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/keyed/mailbox/mailboxsprite" unique_id=94526820]
+position = Vector2(10.000001, -7.0000076)
+scale = Vector2(0.012249969, 0.0112499995)
+texture = ExtResource("7_tpwpp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/games/keyed/mailbox/mailboxsprite" unique_id=1427582804]
+position = Vector2(10.000004, -1)
+scale = Vector2(0.011500002, 0.011749999)
+texture = ExtResource("8_7ftgl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D/games/keyed/mailbox/mailboxsprite" unique_id=1037663905]
+position = Vector2(10.000001, 6)
+scale = Vector2(0.011500002, 0.011749999)
+texture = ExtResource("8_7ftgl")
+
+[node name="mailbox screen" type="Node2D" parent="Node2D/games/keyed/mailbox" unique_id=1532073669]
+z_index = 4096
+position = Vector2(-761, -633)
+
+[node name="imagry" type="Node2D" parent="Node2D/games/keyed/mailbox/mailbox screen" unique_id=294049292]
+
+[node name="front" type="Node2D" parent="Node2D/games/keyed/mailbox/mailbox screen/imagry" unique_id=854249221]
+z_index = 10
+position = Vector2(17, 32)
+
+[node name="front" type="Sprite2D" parent="Node2D/games/keyed/mailbox/mailbox screen/imagry/front" unique_id=783637199]
+position = Vector2(1, -26.999998)
+scale = Vector2(0.069125, 0.079500005)
+texture = ExtResource("5_0f71q")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/keyed/mailbox/mailbox screen/imagry" unique_id=483579011]
+position = Vector2(26, -2)
+scale = Vector2(0.06425002, 0.10375)
+texture = ExtResource("8_7ftgl")
+
+[node name="back" type="Sprite2D" parent="Node2D/games/keyed/mailbox/mailbox screen/imagry" unique_id=1419375093]
+position = Vector2(17, 4)
+scale = Vector2(0.070999995, 0.084)
+texture = ExtResource("4_5yiy0")
+
+[node name="Grass" type="Sprite2D" parent="Node2D/games/keyed/mailbox/mailbox screen" unique_id=1618879222]
+z_index = -5
+position = Vector2(26.00001, 4.9999924)
+scale = Vector2(0.123, 0.067999996)
+texture = ExtResource("6_ruw3y")
+
+[node name="Path2D" type="Path2D" parent="Node2D/games/keyed/mailbox/mailbox screen" unique_id=2081612087]
+z_index = -1
+position = Vector2(5, -11)
+curve = SubResource("Curve2D_dv0eb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/games/keyed/mailbox/mailbox screen/Path2D" unique_id=887137915]
+position = Vector2(219, 147)
+rotation = -1.6990006
+
+[node name="Node2D" type="Node2D" parent="Node2D/games/keyed/mailbox/mailbox screen/Path2D/PathFollow2D" unique_id=1442290386]
+rotation = 3.1415927
+scale = Vector2(0.24, 2)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/games/keyed/mailbox/mailbox screen/Path2D/PathFollow2D/Node2D" unique_id=1931428345]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(-2.0000143, -1.0000151)
+scale = Vector2(0.17216142, 0.10212754)
+texture = ExtResource("4_t7and")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/keyed/mailbox/mailbox screen/Path2D/PathFollow2D/Node2D" unique_id=43577526]
+position = Vector2(14, 0)
+scale = Vector2(0.053874984, 0.048499968)
+texture = ExtResource("10_1id6j")
+
+[node name="generalmailarea" type="Area2D" parent="Node2D/games/keyed/mailbox" unique_id=520971925]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/keyed/mailbox/generalmailarea" unique_id=1683888512]
+position = Vector2(8, 4)
+shape = SubResource("RectangleShape2D_nrcul")
 
 [node name="character" type="Node2D" parent="Node2D" unique_id=275240134]
 
@@ -1193,3 +1307,7 @@ position_smoothing_enabled = true
 [connection signal="body_exited" from="Node2D/games/deadlock mailbox/mailbox/dlmailboxarea" to="Node2D/games/deadlock mailbox" method="_on_dlmailboxarea_body_exited"]
 [connection signal="body_entered" from="Node2D/games/garden from another/mailbox/generalmailarea" to="Node2D/games/garden from another/mailbox" method="_on_generalmailarea_body_entered"]
 [connection signal="body_exited" from="Node2D/games/garden from another/mailbox/generalmailarea" to="Node2D/games/garden from another/mailbox" method="_on_generalmailarea_body_exited"]
+[connection signal="body_entered" from="Node2D/games/keyed/key/keyarea" to="Node2D/games/keyed" method="_on_keyarea_body_entered"]
+[connection signal="body_exited" from="Node2D/games/keyed/key/keyarea" to="Node2D/games/keyed" method="_on_keyarea_body_exited"]
+[connection signal="body_entered" from="Node2D/games/keyed/mailbox/generalmailarea" to="Node2D/games/keyed/mailbox" method="_on_generalmailarea_body_entered"]
+[connection signal="body_exited" from="Node2D/games/keyed/mailbox/generalmailarea" to="Node2D/games/keyed/mailbox" method="_on_generalmailarea_body_exited"]

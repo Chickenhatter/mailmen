@@ -51,6 +51,7 @@ func _on_generalmailarea_body_exited(body: Node2D) -> void:
 		inmailbox = false
 
 func mailaway():
+	character.moving = false
 	$"mailbox screen".global_position = character.global_position
 	mailfall = true
 	await get_tree().create_timer(1).timeout
@@ -68,3 +69,4 @@ func mailaway():
 	await get_tree().create_timer(0.2).timeout
 	$"mailbox screen".global_position = Vector2(-1000,-1000)
 	$mailboxsprite.global_position = Vector2(-1000,-1000)
+	character.moving = true
