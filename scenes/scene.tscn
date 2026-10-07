@@ -6,6 +6,11 @@
 [ext_resource type="Script" uid="uid://b0gxmyyp6ee80" path="res://code/deadlock_mailbox.gd" id="3_gjmho"]
 [ext_resource type="Texture2D" uid="uid://c3xokofw0kmrg" path="res://assets/items/bone.png" id="4_gjmho"]
 [ext_resource type="Texture2D" uid="uid://dhwsycd8xcf5u" path="res://assets/tiles/sgrey.png" id="4_t7and"]
+[ext_resource type="Texture2D" uid="uid://cwmk8uywgk5ia" path="res://assets/map/grass.png" id="6_ruw3y"]
+[ext_resource type="Texture2D" uid="uid://djfvvmdqno88o" path="res://assets/items/box.png" id="7_tpwpp"]
+[ext_resource type="Texture2D" uid="uid://dcq3ygg23rkvi" path="res://assets/items/stick-modified.png" id="8_7ftgl"]
+[ext_resource type="Texture2D" uid="uid://cen2koxcwgn8q" path="res://assets/map/house-modified.png" id="9_dqloj"]
+[ext_resource type="Texture2D" uid="uid://cgr0lvlbhpgua" path="res://assets/map/fence-modified.png" id="10_5yiy0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4msxo"]
 radius = 15.0
@@ -38,6 +43,7 @@ size = Vector2(20, 32)
 size = Vector2(20, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjmho"]
+size = Vector2(22, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fb3c"]
 size = Vector2(28, 28.5)
@@ -136,7 +142,105 @@ shape = SubResource("RectangleShape2D_7xrwy")
 [node name="dlmailboxarea" type="Area2D" parent="Node2D/games/deadlock mailbox/mailbox" unique_id=1983689588]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/deadlock mailbox/mailbox/dlmailboxarea" unique_id=1549382033]
+position = Vector2(9, -0.5)
 shape = SubResource("RectangleShape2D_gjmho")
+
+[node name="map" type="Node2D" parent="Node2D/games" unique_id=1969581858]
+z_index = -99
+
+[node name="grass" type="Node2D" parent="Node2D/games/map" unique_id=113049502]
+scale = Vector2(0.175, 0.175)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/map/grass" unique_id=3892371]
+position = Vector2(84.99994, 67.99994)
+scale = Vector2(0.56, 0.5485)
+texture = ExtResource("6_ruw3y")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/games/map/grass" unique_id=939078804]
+position = Vector2(-555.00006, -650.00006)
+scale = Vector2(0.56, 0.5485)
+texture = ExtResource("6_ruw3y")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D/games/map/grass" unique_id=1893583899]
+position = Vector2(-1030.0002, 381.00003)
+scale = Vector2(0.56, 0.5485)
+texture = ExtResource("6_ruw3y")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D/games/map/grass" unique_id=537844997]
+position = Vector2(66, 1097)
+scale = Vector2(0.56, 0.5485)
+texture = ExtResource("6_ruw3y")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D/games/map/grass" unique_id=1567363269]
+position = Vector2(503.00006, -818.0001)
+scale = Vector2(0.56, 0.5485)
+texture = ExtResource("6_ruw3y")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Node2D/games/map/grass" unique_id=182913970]
+position = Vector2(973.0001, 209.00002)
+scale = Vector2(0.56, 0.5485)
+texture = ExtResource("6_ruw3y")
+
+[node name="houses" type="Node2D" parent="Node2D/games/map" unique_id=1740772797]
+
+[node name="dlmmap" type="Node2D" parent="Node2D/games/map/houses" unique_id=298140052]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/map/houses/dlmmap" unique_id=530197494]
+position = Vector2(10.000001, -7.0000076)
+scale = Vector2(0.012249969, 0.0112499995)
+texture = ExtResource("7_tpwpp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/games/map/houses/dlmmap" unique_id=1673857896]
+position = Vector2(10.000004, -1)
+scale = Vector2(0.011500002, 0.011749999)
+texture = ExtResource("8_7ftgl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D/games/map/houses/dlmmap" unique_id=750751820]
+position = Vector2(10.000001, 6)
+scale = Vector2(0.011500002, 0.011749999)
+texture = ExtResource("8_7ftgl")
+
+[node name="Node2D" type="Node2D" parent="Node2D/games/map/houses" unique_id=531689654]
+z_index = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/map/houses/Node2D" unique_id=1965074178]
+position = Vector2(2, -68.000015)
+scale = Vector2(0.074999906, 0.065500006)
+texture = ExtResource("9_dqloj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/games/map/houses/Node2D" unique_id=1343786214]
+position = Vector2(143, -68)
+scale = Vector2(0.074999906, 0.065500006)
+texture = ExtResource("9_dqloj")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D/games/map/houses/Node2D" unique_id=309444183]
+position = Vector2(291, -70)
+scale = Vector2(0.074999906, 0.065500006)
+texture = ExtResource("9_dqloj")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D/games/map/houses/Node2D" unique_id=235157111]
+z_index = -1
+position = Vector2(-58.000008, -76.99999)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D/games/map/houses/Node2D" unique_id=926439189]
+z_index = -1
+position = Vector2(41.999992, -74)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Node2D/games/map/houses/Node2D" unique_id=2131193517]
+z_index = -1
+position = Vector2(-72, -26.000008)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Node2D/games/map/houses/Node2D" unique_id=1122436834]
+z_index = -1
+position = Vector2(44.999992, -24.000008)
+scale = Vector2(0.053, 0.0915)
+texture = ExtResource("10_5yiy0")
 
 [node name="character" type="Node2D" parent="Node2D" unique_id=275240134]
 
@@ -162,7 +266,7 @@ autoplay = "none"
 
 [node name="darkspire" type="Sprite2D" parent="Node2D/character/mailman" unique_id=448714224]
 self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 0)
-position = Vector2(31.500008, 18.5)
+position = Vector2(41, 12)
 scale = Vector2(2.3203125, 1.3671875)
 texture = ExtResource("2_4msxo")
 
