@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cq45qp2gq3g47" path="res://code/dog_and_bone.gd" id="3_5fb3c"]
 [ext_resource type="Script" uid="uid://b0gxmyyp6ee80" path="res://code/deadlock_mailbox.gd" id="3_gjmho"]
 [ext_resource type="Texture2D" uid="uid://c3xokofw0kmrg" path="res://assets/items/bone.png" id="4_gjmho"]
+[ext_resource type="Texture2D" uid="uid://dhwsycd8xcf5u" path="res://assets/tiles/sgrey.png" id="4_t7and"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4msxo"]
 radius = 15.0
@@ -30,10 +31,11 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpb1b"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5m13b"]
+size = Vector2(20, 32)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xrwy"]
 size = Vector2(20, 27)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5m13b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjmho"]
 
@@ -88,25 +90,18 @@ position = Vector2(79, 46)
 
 [node name="imagry" type="Node2D" parent="Node2D/games/deadlock mailbox/mailbox screen" unique_id=10716079]
 
+[node name="front" type="Node2D" parent="Node2D/games/deadlock mailbox/mailbox screen/imagry" unique_id=906069612]
+
+[node name="front" type="Sprite2D" parent="Node2D/games/deadlock mailbox/mailbox screen/imagry/front" unique_id=672639389]
+position = Vector2(4.23916, -39.531822)
+rotation = 3.1415927
+scale = Vector2(0.29007867, 0.33636755)
+texture = ExtResource("4_t7and")
+
 [node name="deadlock" type="Node2D" parent="Node2D/games/deadlock mailbox/mailbox screen" unique_id=1209133699]
 
-[node name="slider" type="RigidBody2D" parent="Node2D/games/deadlock mailbox/mailbox screen/deadlock" unique_id=968613609]
-position = Vector2(12, -19)
-input_pickable = true
-mass = 0.001
-gravity_scale = 0.0
-freeze = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/deadlock mailbox/mailbox screen/deadlock/slider" unique_id=475272820]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_7xrwy")
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/deadlock mailbox/mailbox screen/deadlock/slider" unique_id=1955408146]
-position = Vector2(1.0000019, 0)
-scale = Vector2(0.16406251, 0.2109375)
-texture = ExtResource("2_4msxo")
-
 [node name="case" type="RigidBody2D" parent="Node2D/games/deadlock mailbox/mailbox screen/deadlock" unique_id=1028746645]
+position = Vector2(10, 0)
 gravity_scale = 0.0
 freeze = true
 
@@ -120,9 +115,21 @@ position = Vector2(-20, -21)
 position = Vector2(13, -21)
 
 [node name="dlactivator" type="Area2D" parent="Node2D/games/deadlock mailbox/mailbox screen/deadlock" unique_id=467197307]
+position = Vector2(24, -26)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/deadlock mailbox/mailbox screen/deadlock/dlactivator" unique_id=876471523]
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_5m13b")
+
+[node name="slider" type="Area2D" parent="Node2D/games/deadlock mailbox/mailbox screen/deadlock" unique_id=646767235]
+position = Vector2(-11, -20)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/deadlock mailbox/mailbox screen/deadlock/slider" unique_id=1955408146]
+scale = Vector2(0.16406251, 0.2109375)
+texture = ExtResource("2_4msxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/deadlock mailbox/mailbox screen/deadlock/slider" unique_id=475272820]
+shape = SubResource("RectangleShape2D_7xrwy")
 
 [node name="mailbox" type="Node2D" parent="Node2D/games/deadlock mailbox" unique_id=1503831462]
 
@@ -146,10 +153,6 @@ texture = ExtResource("2_4msxo")
 position = Vector2(9, 14.75)
 shape = SubResource("RectangleShape2D_5fb3c")
 
-[node name="Camera2D" type="Camera2D" parent="Node2D/character/mailman" unique_id=198284071]
-position = Vector2(20, 15)
-position_smoothing_enabled = true
-
 [node name="bonesprite" type="AnimatedSprite2D" parent="Node2D/character/mailman" unique_id=1564923915]
 position = Vector2(15, 14)
 scale = Vector2(0.1, 0.21000001)
@@ -163,6 +166,10 @@ position = Vector2(31.500008, 18.5)
 scale = Vector2(2.3203125, 1.3671875)
 texture = ExtResource("2_4msxo")
 
+[node name="Camera2D" type="Camera2D" parent="Node2D/character/mailman" unique_id=198284071]
+position = Vector2(20, 15)
+position_smoothing_enabled = true
+
 [node name="Node2D" type="Node2D" parent="Node2D" unique_id=1221848106]
 
 [connection signal="body_entered" from="Node2D/games/dog and bone/bone/bonearea" to="Node2D/games/dog and bone" method="_on_bone_body_entered"]
@@ -170,9 +177,11 @@ texture = ExtResource("2_4msxo")
 [connection signal="body_exited" from="Node2D/games/dog and bone/bone/bonearea" to="Node2D/games/dog and bone" method="_on_bone_body_exited"]
 [connection signal="body_exited" from="Node2D/games/dog and bone/bone/bonearea" to="Node2D/games/dog and bone" method="_on_bonearea_body_exited"]
 [connection signal="body_entered" from="Node2D/games/dog and bone/dog garden/Node2D/gardenarea" to="Node2D/games/dog and bone" method="_on_gardenarea_body_entered"]
-[connection signal="mouse_entered" from="Node2D/games/deadlock mailbox/mailbox screen/deadlock/slider" to="Node2D/games/deadlock mailbox" method="_on_rigid_body_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Node2D/games/deadlock mailbox/mailbox screen/deadlock/slider" to="Node2D/games/deadlock mailbox" method="_on_rigid_body_2d_mouse_exited"]
+[connection signal="area_entered" from="Node2D/games/deadlock mailbox/mailbox screen/deadlock/dlactivator" to="Node2D/games/deadlock mailbox" method="_on_dlactivator_area_entered"]
+[connection signal="area_exited" from="Node2D/games/deadlock mailbox/mailbox screen/deadlock/dlactivator" to="Node2D/games/deadlock mailbox" method="_on_dlactivator_area_exited"]
 [connection signal="body_entered" from="Node2D/games/deadlock mailbox/mailbox screen/deadlock/dlactivator" to="Node2D/games/deadlock mailbox" method="_on_dlactivator_body_entered"]
 [connection signal="body_exited" from="Node2D/games/deadlock mailbox/mailbox screen/deadlock/dlactivator" to="Node2D/games/deadlock mailbox" method="_on_dlactivator_body_exited"]
+[connection signal="mouse_entered" from="Node2D/games/deadlock mailbox/mailbox screen/deadlock/slider" to="Node2D/games/deadlock mailbox" method="_on_slider_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/games/deadlock mailbox/mailbox screen/deadlock/slider" to="Node2D/games/deadlock mailbox" method="_on_slider_mouse_exited"]
 [connection signal="body_entered" from="Node2D/games/deadlock mailbox/mailbox/dlmailboxarea" to="Node2D/games/deadlock mailbox" method="_on_dlmailboxarea_body_entered"]
 [connection signal="body_exited" from="Node2D/games/deadlock mailbox/mailbox/dlmailboxarea" to="Node2D/games/deadlock mailbox" method="_on_dlmailboxarea_body_exited"]
