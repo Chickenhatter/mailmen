@@ -5590,6 +5590,7 @@ position = Vector2(48, 43)
 collision_layer = 2
 collision_mask = 2
 input_pickable = true
+gravity_scale = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/brokethemailbox/placing together/Node2D/topmail" unique_id=373692290]
 position = Vector2(-1, 1)
@@ -5607,51 +5608,54 @@ texture = ExtResource("4_5yiy0")
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("5_0f71q")
 
-[node name="RigidBody2D2" type="RigidBody2D" parent="Node2D/games/brokethemailbox/placing together/Node2D" unique_id=660926572]
+[node name="stick1" type="RigidBody2D" parent="Node2D/games/brokethemailbox/placing together/Node2D" unique_id=660926572]
 position = Vector2(68, 51)
 collision_layer = 2
 collision_mask = 2
+input_pickable = true
 gravity_scale = 0.6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/brokethemailbox/placing together/Node2D/RigidBody2D2" unique_id=1823802765]
-position = Vector2(3.3, -2.7)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/brokethemailbox/placing together/Node2D/stick1" unique_id=1823802765]
+position = Vector2(-3.0994415e-06, 7.1525574e-07)
 scale = Vector2(1.855, 1.23)
 shape = SubResource("RectangleShape2D_spbo0")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/brokethemailbox/placing together/Node2D/RigidBody2D2" unique_id=192742834]
-position = Vector2(7, -16)
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/brokethemailbox/placing together/Node2D/stick1" unique_id=192742834]
+position = Vector2(3.7, -13.3)
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("8_7ftgl")
 
-[node name="RigidBody2D3" type="RigidBody2D" parent="Node2D/games/brokethemailbox/placing together/Node2D" unique_id=874555539]
+[node name="stick2" type="RigidBody2D" parent="Node2D/games/brokethemailbox/placing together/Node2D" unique_id=874555539]
 position = Vector2(68, 65)
 collision_layer = 2
 collision_mask = 2
+input_pickable = true
 gravity_scale = 0.6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/brokethemailbox/placing together/Node2D/RigidBody2D3" unique_id=753758646]
-position = Vector2(3.3, -2.7)
-scale = Vector2(1.79, 1.23)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/brokethemailbox/placing together/Node2D/stick2" unique_id=190720223]
+position = Vector2(-3.0994415e-06, 7.1525574e-07)
+scale = Vector2(1.855, 1.23)
 shape = SubResource("RectangleShape2D_spbo0")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/brokethemailbox/placing together/Node2D/RigidBody2D3" unique_id=1272147507]
-position = Vector2(7, -16)
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/brokethemailbox/placing together/Node2D/stick2" unique_id=65532776]
+position = Vector2(3.7, -13.3)
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("8_7ftgl")
 
-[node name="RigidBody2D4" type="RigidBody2D" parent="Node2D/games/brokethemailbox/placing together/Node2D" unique_id=882932031]
+[node name="stick3" type="RigidBody2D" parent="Node2D/games/brokethemailbox/placing together/Node2D" unique_id=882932031]
 position = Vector2(68, 79)
 collision_layer = 2
 collision_mask = 2
+input_pickable = true
 gravity_scale = 0.6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/brokethemailbox/placing together/Node2D/RigidBody2D4" unique_id=891389056]
-position = Vector2(3.3, -2.7)
-scale = Vector2(1.77, 1.23)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/games/brokethemailbox/placing together/Node2D/stick3" unique_id=917172725]
+position = Vector2(-3.0994415e-06, 7.1525574e-07)
+scale = Vector2(1.855, 1.23)
 shape = SubResource("RectangleShape2D_spbo0")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/brokethemailbox/placing together/Node2D/RigidBody2D4" unique_id=76790354]
-position = Vector2(7, -16)
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/games/brokethemailbox/placing together/Node2D/stick3" unique_id=1558600204]
+position = Vector2(3.7, -13.3)
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("8_7ftgl")
 
@@ -5987,3 +5991,9 @@ tile_set = SubResource("TileSet_1id6j")
 [connection signal="body_exited" from="Node2D/games/keyed/mailbox/generalmailarea" to="Node2D/games/keyed/mailbox" method="_on_generalmailarea_body_exited"]
 [connection signal="mouse_entered" from="Node2D/games/brokethemailbox/placing together/Node2D/topmail" to="Node2D/games/brokethemailbox/placing together" method="_on_topmail_mouse_entered"]
 [connection signal="mouse_exited" from="Node2D/games/brokethemailbox/placing together/Node2D/topmail" to="Node2D/games/brokethemailbox/placing together" method="_on_topmail_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/games/brokethemailbox/placing together/Node2D/stick1" to="Node2D/games/brokethemailbox/placing together" method="_on_stick_1_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/games/brokethemailbox/placing together/Node2D/stick1" to="Node2D/games/brokethemailbox/placing together" method="_on_stick_1_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/games/brokethemailbox/placing together/Node2D/stick2" to="Node2D/games/brokethemailbox/placing together" method="_on_stick_2_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/games/brokethemailbox/placing together/Node2D/stick2" to="Node2D/games/brokethemailbox/placing together" method="_on_stick_2_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/games/brokethemailbox/placing together/Node2D/stick3" to="Node2D/games/brokethemailbox/placing together" method="_on_stick_3_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/games/brokethemailbox/placing together/Node2D/stick3" to="Node2D/games/brokethemailbox/placing together" method="_on_stick_3_mouse_exited"]

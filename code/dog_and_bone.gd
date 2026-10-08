@@ -87,3 +87,7 @@ func dog_pushout():
 
 func _on_rigid_body_2d_mouse_entered() -> void:
 	pass # Replace with function body.
+
+
+func _on_stick_1_mouse_entered() -> void:
+	pass # Replace with function body.
