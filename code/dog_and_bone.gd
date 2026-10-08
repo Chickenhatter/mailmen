@@ -51,6 +51,7 @@ func _on_gardenarea_body_entered(body: Node2D) -> void:
 		if dogtamed == false:
 			if holdingbone == true:
 				dogtamed = true
+				holdingbone = false
 				tame_dog()
 			else:
 				dog_pushout()
