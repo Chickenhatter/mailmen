@@ -5,7 +5,7 @@ var mousesticktwo = false
 var mousestickthree = false
 var collisioncontrol = 0
 var mailattop = false
-var lctimer = false
+var lctimer = 0
 var startfreeze = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -75,9 +75,11 @@ func _process(delta: float) -> void:
 	
 	
 	if mailattop == true:
+		print('g')
 		if lctimer > 1:
-			pass
-	
+			print('y')
+	if lctimer > 1:
+		print('q')
 
 func _on_topmail_mouse_entered() -> void:
 	mouseinmailtop = true
@@ -121,7 +123,6 @@ func _on_stick_3_mouse_exited() -> void:
 
 
 func _on_bush_mouse_entered() -> void:
-	print('a')
 	collisioncontrol += 1
 
 
