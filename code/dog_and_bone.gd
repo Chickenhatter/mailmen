@@ -83,7 +83,6 @@ func dog_pushout():
 	darkening = false
 	await get_tree().create_timer(1).timeout
 	character.moving = true
-	$"..".mailboxcomplete += 1
 
 
 func _on_rigid_body_2d_mouse_entered() -> void:

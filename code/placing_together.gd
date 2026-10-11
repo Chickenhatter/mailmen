@@ -76,7 +76,7 @@ func _process(delta: float) -> void:
 	
 	if mailattop == true:
 		if lctimer > 1.5:
-			lctimer = -1000
+			lctimer = -10000
 			mailattop = false
 			$".".global_position = Vector2(-1000,-1000)
 			%mailbox.mailaway()

@@ -2,25 +2,105 @@
 
 [ext_resource type="Texture2D" uid="uid://cwmk8uywgk5ia" path="res://assets/map/grass.png" id="1_jaeev"]
 [ext_resource type="Script" uid="uid://byruktpwapx8k" path="res://code/button.gd" id="1_u80x2"]
+[ext_resource type="Texture2D" uid="uid://ds04tymx1scka" path="res://assets/items/mail-modified.png" id="3_bodal"]
 
 [node name="Node2D" type="Node2D" unique_id=1433245157]
 
 [node name="Button" type="Button" parent="." unique_id=1301590729]
 offset_left = -377.0
-offset_top = -282.0
+offset_top = -304.0
 offset_right = 376.0
-offset_bottom = 257.0
-text = "start"
+offset_bottom = 235.0
+text = "start
+Here deliver these letters to the town"
 script = ExtResource("1_u80x2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Button" unique_id=2058252987]
 
 [node name="Grass" type="Sprite2D" parent="Button" unique_id=484120134]
 z_index = -1
-position = Vector2(320, 311)
+position = Vector2(345, 348)
 texture = ExtResource("1_jaeev")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=864843362]
 zoom = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=976301630]
+z_index = 2
+position = Vector2(-97, 54.999996)
+scale = Vector2(0.06287501, 0.05337501)
+texture = ExtResource("3_bodal")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=424718341]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+z_index = -1
+position = Vector2(-285.99997, -12.500013)
+scale = Vector2(0.448, 0.2505)
+texture = ExtResource("1_jaeev")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=200703340]
+z_index = 2
+position = Vector2(-32, 56)
+scale = Vector2(0.06287501, 0.05337501)
+texture = ExtResource("3_bodal")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2" unique_id=405018974]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+z_index = -1
+position = Vector2(-285.99997, -12.500013)
+scale = Vector2(0.448, 0.2505)
+texture = ExtResource("1_jaeev")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=912964499]
+z_index = 2
+position = Vector2(131, 58)
+scale = Vector2(0.06287501, 0.05337501)
+texture = ExtResource("3_bodal")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D3" unique_id=1412760504]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+z_index = -1
+position = Vector2(-285.99997, -12.500013)
+scale = Vector2(0.448, 0.2505)
+texture = ExtResource("1_jaeev")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1812587410]
+z_index = 2
+position = Vector2(31, 56)
+scale = Vector2(0.06287501, 0.05337501)
+texture = ExtResource("3_bodal")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D4" unique_id=1116742534]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+z_index = -1
+position = Vector2(-285.99997, -12.500013)
+scale = Vector2(0.448, 0.2505)
+texture = ExtResource("1_jaeev")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1969854213]
+z_index = 2
+position = Vector2(-63, 24)
+scale = Vector2(0.06287501, 0.05337501)
+texture = ExtResource("3_bodal")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D5" unique_id=525987422]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+z_index = -1
+position = Vector2(-285.99997, -12.500013)
+scale = Vector2(0.448, 0.2505)
+texture = ExtResource("1_jaeev")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=463753823]
+z_index = 2
+position = Vector2(-1, 24)
+scale = Vector2(0.06287501, 0.05337501)
+texture = ExtResource("3_bodal")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D6" unique_id=258707484]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+z_index = -1
+position = Vector2(-285.99997, -12.500013)
+scale = Vector2(0.448, 0.2505)
+texture = ExtResource("1_jaeev")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

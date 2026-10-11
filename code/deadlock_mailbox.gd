@@ -81,6 +81,7 @@ func _on_slider_mouse_exited() -> void:
 
 func _on_dlactivator_area_entered(area: Area2D) -> void:
 	if area.name == 'slider':
+		$mailbox.global_position = Vector2(-1000,-1000)
 		mailfall = true
 		await get_tree().create_timer(1).timeout
 		mailstart = true
@@ -99,4 +100,4 @@ func _on_dlactivator_area_entered(area: Area2D) -> void:
 		mailman.moving = true
 		$"..".mailboxcomplete += 1
 		$"mailbox screen".global_position = Vector2(-1000,-1000)
-		$mailbox/dlmmap.global_position = Vector2(-1000,-1000)
+		
