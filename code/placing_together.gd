@@ -68,18 +68,19 @@ func _process(delta: float) -> void:
 		$Node2D/stick3.freeze = false
 		$Node2D/stick3.linear_velocity = Vector2(0,1)
 	
-	if Input.is_action_pressed('ui_left'):
+	if Input.is_action_pressed('ui_leftclick'):
 		lctimer = 0
 	else:
 		lctimer += delta
 	
 	
 	if mailattop == true:
-		print('g')
-		if lctimer > 1:
-			print('y')
-	if lctimer > 1:
-		print('q')
+		if lctimer > 1.5:
+			lctimer = -1000
+			mailattop = false
+			$".".global_position = Vector2(-1000,-1000)
+			%mailbox.mailaway()
+
 
 func _on_topmail_mouse_entered() -> void:
 	mouseinmailtop = true

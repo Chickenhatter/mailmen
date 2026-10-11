@@ -1,6 +1,6 @@
 extends Node2D
 @onready var character = %mailman
-var inmailbox = true
+var inmailbox = false
 var itshere = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -45,3 +45,15 @@ func turn(a):
 	$"placing together/Node2D/topmail".angular_velocity = 0
 	$"placing together/Node2D/topmail".freeze = true 
 	$"placing together/Node2D/topmail".sleeping = true 
+
+
+
+
+func _on_generalmailarea_body_entered(body: Node2D) -> void:
+	if body.name == "mailman":
+		inmailbox = true
+
+
+func _on_generalmailarea_body_exited(body: Node2D) -> void:
+	if body.name == "mailman":
+		inmailbox = false
