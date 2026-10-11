@@ -66,3 +66,4 @@ func mailaway():
 	$"mailbox screen".global_position = Vector2(-1000,-1000)
 	$mailboxsprite.global_position = Vector2(-1000,-1000)
 	character.moving = true
+	$"../../..".mailboxcomplete += 1

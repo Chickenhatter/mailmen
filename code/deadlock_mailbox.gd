@@ -97,5 +97,6 @@ func _on_dlactivator_area_entered(area: Area2D) -> void:
 		await get_tree().create_timer(0.2).timeout
 		puzzle = false
 		mailman.moving = true
+		$"..".mailboxcomplete += 1
 		$"mailbox screen".global_position = Vector2(-1000,-1000)
 		$mailbox/dlmmap.global_position = Vector2(-1000,-1000)
