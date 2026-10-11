@@ -16,7 +16,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if inmailbox == true:
-		if Input.is_action_pressed('ui_f'):
+		if Input.is_action_just_pressed('ui_f'):
 			if puzz == false:
 				character.moving = false
 				$"mailbox screen".global_position = character.global_position
@@ -76,6 +76,6 @@ func mailaway():
 	closemail = false
 	await get_tree().create_timer(0.2).timeout
 	$"mailbox screen".global_position = Vector2(-1000,-1000)
-	$mailboxsprite.global_position = Vector2(-1000,-1000)
+	$".".global_position = Vector2(-1000,-1000)
 	character.moving = true
 	$"../..".mailboxcomplete += 1

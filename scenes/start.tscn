@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://djm3crlrr3vt2"]
+
+[ext_resource type="Texture2D" uid="uid://cwmk8uywgk5ia" path="res://assets/map/grass.png" id="1_jaeev"]
+[ext_resource type="Script" uid="uid://byruktpwapx8k" path="res://code/button.gd" id="1_u80x2"]
+
+[node name="Node2D" type="Node2D" unique_id=1433245157]
+
+[node name="Button" type="Button" parent="." unique_id=1301590729]
+offset_left = -377.0
+offset_top = -282.0
+offset_right = 376.0
+offset_bottom = 257.0
+text = "start"
+script = ExtResource("1_u80x2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button" unique_id=2058252987]
+
+[node name="Grass" type="Sprite2D" parent="Button" unique_id=484120134]
+z_index = -1
+position = Vector2(320, 311)
+texture = ExtResource("1_jaeev")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=864843362]
+zoom = Vector2(0.6, 0.6)
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -13,10 +13,10 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed('ui_f'):
 			if holdingkey == true:
 				holdingkey = false
-				$key/key.play('none')
+				$key/key.play('key')
 				$key.global_position = character.global_position
 			else:
-				$key/key.play('key')
+				$key/key.play('none')
 				holdingkey = true
 
 func _on_keyarea_body_entered(body: Node2D) -> void:

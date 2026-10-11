@@ -19,10 +19,12 @@
 [ext_resource type="Texture2D" uid="uid://cgr0lvlbhpgua" path="res://assets/map/fence-modified.png" id="10_5yiy0"]
 [ext_resource type="Script" uid="uid://enlnkwjp4mul" path="res://code/placing_together.gd" id="16_2v74y"]
 [ext_resource type="Script" uid="uid://dh3x44rvs6fxa" path="res://code/keyed.gd" id="16_8cc7s"]
+[ext_resource type="Texture2D" uid="uid://dsadei4ux4aun" path="res://assets/items/pixil-frame-0(33).png" id="16_dirim"]
 [ext_resource type="Script" uid="uid://datrvcq7jrsp2" path="res://code/brokethemailbox.gd" id="16_fsfa6"]
 [ext_resource type="Texture2D" uid="uid://bpsrthow4ss4l" path="res://assets/map/bushs.png" id="17_c7gmr"]
 [ext_resource type="Script" uid="uid://doyp6a8qtuokm" path="res://code/keymailbox.gd" id="17_r2e7w"]
 [ext_resource type="Script" uid="uid://cm6laa6htaga0" path="res://scenes/brokenmailbox complete.gd" id="17_t6gja"]
+[ext_resource type="Texture2D" uid="uid://b55yn8iwwjk1f" path="res://assets/items/pixil-frame-0(34).png" id="22_3dsft"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4msxo"]
 radius = 15.0
@@ -71,7 +73,10 @@ size = Vector2(22, 37)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rpb1b"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_dirim")
+}],
 "loop": 1,
 "name": &"key",
 "speed": 5.0
@@ -4680,7 +4685,7 @@ size = Vector2(135, 39)
 size = Vector2(81, 118)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fb3c"]
-size = Vector2(28, 28.5)
+size = Vector2(13, 28.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0f71q"]
 texture = ExtResource("4_t7and")
@@ -5511,8 +5516,9 @@ position = Vector2(-73, -3)
 shape = SubResource("CircleShape2D_7xrwy")
 
 [node name="key" type="AnimatedSprite2D" parent="Node2D/games/keyed/key" unique_id=2060051092]
+scale = Vector2(0.205, 0.205)
 sprite_frames = SubResource("SpriteFrames_rpb1b")
-animation = &"none"
+animation = &"key"
 
 [node name="mailbox" type="Node2D" parent="Node2D/games/keyed" unique_id=1865536360]
 position = Vector2(20, 18)
@@ -5931,16 +5937,17 @@ shape = SubResource("RectangleShape2D_7g8u7")
 
 [node name="mailman" type="CharacterBody2D" parent="Node2D/character" unique_id=1972218064]
 unique_name_in_owner = true
-position = Vector2(70, 31)
+position = Vector2(-59, 48)
 script = ExtResource("1_1kc1q")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/character/mailman" unique_id=1524461955]
-position = Vector2(9, 15.500002)
-scale = Vector2(0.21875001, 0.22656251)
+self_modulate = Color(0.012617188, 0.012617188, 0.012617188, 0)
+position = Vector2(33.000004, 12.000002)
+scale = Vector2(1.953125, 1.1250001)
 texture = ExtResource("2_4msxo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/character/mailman" unique_id=759103610]
-position = Vector2(9, 14.75)
+position = Vector2(8.5, 15)
 shape = SubResource("RectangleShape2D_5fb3c")
 
 [node name="bonesprite" type="AnimatedSprite2D" parent="Node2D/character/mailman" unique_id=1564923915]
@@ -5959,6 +5966,11 @@ texture = ExtResource("2_4msxo")
 [node name="Camera2D" type="Camera2D" parent="Node2D/character/mailman" unique_id=198284071]
 position = Vector2(20, 9)
 position_smoothing_enabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/character/mailman" unique_id=642799732]
+position = Vector2(9, 15.000002)
+scale = Vector2(0.285, 0.316)
+texture = ExtResource("22_3dsft")
 
 [node name="Node2D" type="Node2D" parent="Node2D" unique_id=1221848106]
 
